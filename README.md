@@ -8,8 +8,8 @@ Basic text formatting options (bold, italic, underline)
 Change font functionality
 
 ## Requirements
-Python 3
-tkinter library
+Python 3,
+tkinter library.
 
 
 ## Usage
