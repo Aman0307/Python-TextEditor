@@ -21,7 +21,7 @@ Copy code
 The text editor will open in a new window. Use the File menu to save, and create new text files and exit. Use the Format menu to apply basic text formatting and the font sub-menu inside format menu to select from a list of fonts .
 
 ## License
-Text Editor is licensed under the . See LICENSE for more information.
+Text Editor is licensed under the MIT License. See LICENSE for more information.
 
 ## Credits
 Text Editor was developed by [Aman0307].
