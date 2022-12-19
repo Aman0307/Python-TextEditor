@@ -31,6 +31,7 @@ class TextEditor:
 
         # Create a File menu with Open, Save, and Exit items
         self.file_menu = tk.Menu(self.menu_bar, tearoff=0)
+        self.file_menu.add_command(label="Open", command=self.open_file)
         self.file_menu.add_command(label="Save", command=self.on_save_click)
         self.file_menu.add_separator()
         self.file_menu.add_command(label="Exit", command=root.quit)
@@ -56,6 +57,18 @@ class TextEditor:
         # Create the font menu
 
         self.menu_bar.add_cascade(label="Format", menu=self.format_menu)
+        
+    def open_file(self):
+        # open a file dialog and get the selected file's path
+        filepath = filedialog.askopenfilename()
+
+        # open the file and read its contents
+        with open(filepath, 'r') as f:
+            contents = f.read()
+
+        # display the contents in the text area
+        self.text.delete(1.0, tk.END)
+        self.text.insert(tk.END, contents)
 
     def set_font(self, font):
             # Set the font for the text widget
@@ -67,7 +80,7 @@ class TextEditor:
         if filepath:
                 # Save the contents of the Text widget to the selected file
             with open(filepath, "w") as f:
-                f.write(text.get("1.0", "end"))
+                f.write(self.text.get("1.0", "end"))
 
     def toggle_bold(self):
         # Get the current selection
